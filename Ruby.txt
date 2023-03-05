@@ -1,0 +1,159 @@
+print "same PRINT BEFORE line, next PUTS BEFORE line"
+puts "same PRINT BEFORE line, next PUTS BEFORE line"
+
+toi = '100'
+puts toi.class
+
+name = gets.chomp()
+puts ("Hello " + name + " nhe")
+
+num.to_f
+num.to_i
+num.to_s <=== để kết hợp với "Lô hê" khi puts
+
+friends1 = Array[1,2,3]
+friends = Array.new
+puts friends
+puts friends.length
+
+----------------?? HASH VÀ OBJECT
+a = {
+ "not_prop" => 1
+}
+
+a["not_prop"]
+
+?? GỌI LÀ METHOD NOT FUNCTION
+def sayHi(name)
+  puts ("Hello " + name)
+  return 0
+end
+
+sayHi
+sayHi('A')
+
+if isMale
+  puts "OK nè"
+elseif isB
+  puts "B"
+else
+  puts "KKK"
+end
+
+
+case capacity
+when 0
+  "You ran out of gas."
+when 1..20
+  "The tank is almost empty. Quickly, find a gas station!"
+when 21..70
+  "You should be ok for now."
+else
+  "Error: capacity has an invalid value (#{capacity})"
+end
+
+
+
+x = 4
+while x >= 1
+  puts x
+  x = x - 1
+end
+
+i = "In 5 lần"
+for a in 1..5 do     
+ puts i
+end
+
+5.times do |index|
+ puts index
+end
+
+FOR MẢNG => FOR IN
+
+for friend in friends     
+ puts friend
+end
+
+----------------FOR EACH: DÙNG Array là class có function
+DÙNG CALLBACK HAY HƠN
+friends.each do |friend|
+  puts friend
+end
+
+----------------TRY CATCH:
+array = [1,2,3]
+begin
+  num = 10/0
+  array["a"]
+rescue ZeroDivisionError
+  puts "Division by 0"
+rescue TypeError => e
+  #puts "Wrong type"
+  puts e
+end
+
+----------------HỌC CLASS XONG MỚI NGẤM DEPENDENCY INJECTION
+class Book
+  attr_accessor :title, :author, :pages
+end
+
+book1 = Book.new()
+book1.title = "A"
+
+book1 là instance của class và là object
+
+class Book
+  attr_accessor :title
+  def initialize(name) <--- được call khi new <--- constructor(){this.}
+    puts "A"
+    @title = name
+  end
+
+  def method
+    if name = "A"
+      return true
+    end
+    return false
+  end
+end
+book1 = Book.new("A")
+
+class Chef 
+ def make_salad
+     puts "Make salad"
+ end
+end
+
+class ItalianChef < Chef
+  def make_special
+      puts "Make special"
+  end
+end
+
+itchef = ItalianChef.new()
+itchef.make_salad
+itchef.make_special
+
+----------------MODULE
+module store methods
+
+module Tools
+  def sayhi(name)
+     puts "hello #{name}"
+  end
+  def sayhi1(name)
+     puts "hello1 #{name}"
+  end
+end
+
+include Tools
+Tools.sayhi("hung")
+
+require_relative "./useful_tool.rb"
+include Tools
+
+Tools.sayhi("hung")
+
+
+https://www.youtube.com/watch?v=t_ispmWmdjY
